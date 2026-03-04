@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jamming with Riton</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <h1>🍓 Jamming with Riton 🍍</h1>
+        <p>Spin flavors, stir chaos, and jar pure joy.</p>
+      </header>
+
+      <section class="mode-selector card">
+        <h2>Choose your mode</h2>
+        <div class="mode-buttons">
+          <button id="modeManual" class="btn mode-btn active">I’m jamming</button>
+          <button id="modeRoulette" class="btn mode-btn">Let’s jam</button>
+        </div>
+      </section>
+
+      <section id="manualSection" class="card section-block">
+        <h3>Build your jam combo</h3>
+        <div class="grid">
+          <label>
+            Fruit 1
+            <select id="fruit1">
+              <option value="">Choose a fruit...</option>
+            </select>
+          </label>
+          <label>
+            Fruit 2
+            <select id="fruit2">
+              <option value="">Choose a fruit...</option>
+            </select>
+          </label>
+          <label>
+            Twist
+            <select id="spice">
+              <option value="">Choose a twist...</option>
+            </select>
+          </label>
+        </div>
+        <button id="generateBtn" class="btn action">Generate recipe</button>
+      </section>
+
+      <section id="rouletteSection" class="card section-block hidden">
+        <h3>Flavor Roulette</h3>
+        <div class="wheel-wrap">
+          <div class="pointer"></div>
+          <div id="wheel" class="wheel"></div>
+        </div>
+        <button id="spinBtn" class="btn action">SPIN / JAM!</button>
+        <p id="roulettePicked" class="roulette-picked"></p>
+      </section>
+
+      <section id="status" class="status hidden">
+        <div class="spinner"></div>
+        <p>Stirring the pot…</p>
+      </section>
+
+      <section id="error" class="error hidden"></section>
+
+      <section id="result" class="result hidden"></section>
+
+      <footer>Made for joyful kitchen experiments.</footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

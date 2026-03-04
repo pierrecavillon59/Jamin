@@ -1,0 +1,219 @@
+:root {
+  --bg: linear-gradient(130deg, #fff0f6 0%, #f3fff0 45%, #eff2ff 100%);
+  --card: #ffffffcc;
+  --pink: #ff5ca9;
+  --orange: #ff904d;
+  --purple: #885dff;
+  --green: #30c76b;
+  --text: #2f2143;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  margin-bottom: 0.4rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px #00000014;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px #00000022;
+}
+
+.mode-btn {
+  background: #f0e7ff;
+}
+
+.mode-btn.active {
+  background: var(--purple);
+  color: #fff;
+}
+
+.action {
+  background: linear-gradient(45deg, var(--pink), var(--orange));
+  color: #fff;
+  font-weight: bold;
+  margin-top: 0.8rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  gap: 0.3rem;
+}
+
+select {
+  padding: 0.55rem;
+  border-radius: 10px;
+  border: 1px solid #d4caef;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #fff8da;
+  border-radius: 12px;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ffd6f0;
+  border-top: 3px solid var(--pink);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  background: #ffe0e0;
+  color: #8f1f1f;
+  border-radius: 12px;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.result-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 2px #f8e9ff;
+}
+
+.result-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.meta {
+  background: #f7f3ff;
+  border-radius: 12px;
+  padding: 0.5rem 0.8rem;
+}
+
+.wheel-wrap {
+  position: relative;
+  width: min(360px, 90vw);
+  aspect-ratio: 1;
+  margin: 0.5rem auto 1rem;
+}
+
+.wheel {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 10px 24px #0000001f;
+  background: conic-gradient(
+    #ff99c8 0deg 51deg,
+    #a0c4ff 51deg 102deg,
+    #caffbf 102deg 153deg,
+    #ffd6a5 153deg 204deg,
+    #bdb2ff 204deg 255deg,
+    #fdffb6 255deg 306deg,
+    #9bf6ff 306deg 360deg
+  );
+  position: relative;
+  transition: transform 3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.wheel::after {
+  content: "2 fruits + twist\ATropical\ABerry chaos\ACitrus punch\AHerbal surprise\ASpicy dare\AChef's pick";
+  white-space: pre;
+  line-height: 1.5;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #4f4168;
+  position: absolute;
+  inset: 22% 24%;
+}
+
+.pointer {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-top: 24px solid var(--pink);
+  z-index: 5;
+}
+
+.roulette-picked {
+  text-align: center;
+  font-weight: 700;
+  color: #523485;
+}
+
+footer {
+  text-align: center;
+  opacity: 0.8;
+  padding: 0.8rem;
+}
